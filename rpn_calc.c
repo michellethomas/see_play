@@ -122,9 +122,10 @@ int main(int argc, char **argv) {
   int i;
   int x;
   int p;
-  Stack stack = new_stack(argc+argc);
+  Stack stack = new_stack(argc);
   for(i=0; i <= argc; i++){
     if(argv[i] == NULL){
+      printf("you have no args %d", i);
       break;
     }
     else if(isdigit(argv[i][0])){
@@ -138,7 +139,7 @@ int main(int argc, char **argv) {
       calc(arg, stack);
     }
     else{
-      return;
+      printf("args %s", argv[i]);
     }
   }
 }
