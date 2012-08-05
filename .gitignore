@@ -1,0 +1,6 @@
+#Compiled Source Files#
+*.o
+*.out
+*.h.gch
+*.swp
+stack
