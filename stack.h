@@ -6,6 +6,11 @@ struct Stack {
 
 typedef struct Stack * Stack;
 
+int v = 0;
+int verbose(int v){
+  return 1-v;
+}
+
 Stack new_stack(int dim){
   Stack retVal = malloc(sizeof(Stack));
   if (retVal == NULL){
@@ -38,7 +43,9 @@ void push_stack (Stack stack, int pushVal){
   if(stack->top < stack->dimension){
     stack->top=stack->top+1;
     stack->vals[stack->top] = pushVal;
-    printf("Pushed %d \n", pushVal);
+    if(v == 1){
+      printf("Pushed %d \n", pushVal);
+    }
   }
   else{
     printf("You pushed too many items onto the stack\n");
@@ -63,6 +70,9 @@ int pop_stack (Stack stack){
   else{
     int poppedVal = stack->vals[stack->top];
     stack->top = stack->top-1;
+    if(v == 1){
+      printf("Popped %d \n", poppedVal);
+    }
     return poppedVal;
   }
 }
