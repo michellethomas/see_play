@@ -1,2 +1,6 @@
 here's a line!
 push 4
+pop 
+enqueue 6
+pop
+push b
